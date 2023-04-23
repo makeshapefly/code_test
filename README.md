@@ -127,6 +127,8 @@ mutation {
 }
 
 ```
+# Tests
+There is a single illustrative jest test included for Add Phase, however I reached the time allocated limit before adding a more comprehensive suite.
 
 # Improvements
 - error messaging for failed operations to be implemented properly.
@@ -137,7 +139,8 @@ mutation {
 
 
 # Discussion
-- Test suite. Business logic largely in the singleton which would benefit from unit test coverage. TDD might be helpful, but time spent testing and mocking the layers of a GraphQL\REST application might be better spent elsewhere ??
+- Test suite. Business logic largely in the singleton which would benefit from unit test coverage. 
+TDD might be helpful, but time spent testing and mocking the layers of a GraphQL\REST application might be better spent elsewhere ??
 
 - Storing of Phase status - I thought about this for a bit and went with an approach that derives the statuses on the fly. This fits well with an in-memory model for this exercise, but for longer term solution might be better to store this. Would be an interesting discussion.
 
