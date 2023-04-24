@@ -130,6 +130,11 @@ mutation {
 # Tests
 There is a single illustrative jest test included for Add Phase, however I reached the time allocated limit before adding a more comprehensive suite.
 
+```bash
+yarn test
+
+```
+
 # Improvements
 - error messaging for failed operations to be implemented properly.
 
