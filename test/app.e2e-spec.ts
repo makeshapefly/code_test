@@ -1,24 +1,14 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
-import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
+import Singleton from '../src/singleton'
+import { NewPhaseInput } from '../src/modules/phase/dto/new-phase-input';
+import { Phase } from '../src/modules/phase/phase.model';
 
-describe('AppController (e2e)', () => {
-  let app: INestApplication;
-
-  beforeEach(async () => {
-    const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [AppModule],
-    }).compile();
-
-    app = moduleFixture.createNestApplication();
-    await app.init();
+describe("addPhase function", () => {
+    test("it should return the Phase", () => {
+    
+      const input: NewPhaseInput = new NewPhaseInput()
+      input.description = "New Phase"
+      input.status = "open"
+  
+      expect(Singleton.addPhase(input).length).toBe(4) 
+    });
   });
-
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
-  });
-});
